@@ -17,9 +17,11 @@ main{
     min-height: 500px;
     width: 96%;
     background-color: aliceblue;
-    border-radius: 2%;
+    border-radius: 20px;
     margin: 0 auto;
     padding: 15px;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
 
 h1 {
@@ -36,12 +38,12 @@ h2{
     margin: 0;
 }
 
-.flexbox, .grid{
+.flexbox, .grid, .absolute {
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
     margin-top: 20px;
-    
+    min-height: 150px;
 }
 
 .flexbox ul{
@@ -87,4 +89,63 @@ form{
     "i1 i2"
     "ta ta"
     "vi bt";
+}
+
+input, textarea {
+    margin: 5px;
+    
+    padding: 10px;
+    font-size: 1.1rem;
+    font-family: Poppins;
+    border-radius: 5px;
+    background: #ecf0f3;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+textarea {
+grid-area: ta;
+height: 40px;
+resize: none;
+}
+
+#btn-submit {
+    color: white;
+    margin-top: 20px;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+#btn-submit:hover{
+    box-shadow: none;
+}
+
+/* ABSOLUTE */
+/* il faut mettre une position relative au parent pour contraindre l'élément en absolute dans ses frontières  */
+
+.absolute{
+    position: relative;
+}
+#circle1{
+    height: 60px;
+    width: 60px;
+    background: skyblue;
+    position:absolute;
+    border-radius: 150px;
+    top: 0;
+    right: 0;
+}
+
+#circle2{
+    height: 40px;
+    width: 40px;
+    border-radius: 150px;
+    background-color: teal;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
