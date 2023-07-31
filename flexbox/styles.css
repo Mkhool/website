@@ -6,14 +6,14 @@
     padding: 0;
 } */
 
-body{
+body {
     background: url(./assets/img/main_image_star-forming_region_carina_nircam_final-1280.jpg) center/cover;
     background-color: rgb(22, 22, 22);
     min-height: 100vh;
 }
 
 
-main{
+main {
     min-height: 500px;
     width: 96%;
     background-color: aliceblue;
@@ -29,16 +29,18 @@ h1 {
     letter-spacing: 3px;
     text-align: center;
     font-size: 2.5rem;
-    text-shadow: 0 0 0  black;
+    text-shadow: 0 0 0 black;
     color: #f0f8ff;
     font-family: 'Poppins', 'Segoe UI', sans-serif;
-    }
+}
 
-h2{
+h2 {
     margin: 0;
 }
 
-.flexbox, .grid, .absolute {
+.flexbox,
+.grid,
+.absolute {
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
@@ -46,13 +48,13 @@ h2{
     min-height: 150px;
 }
 
-.flexbox ul{
+.flexbox ul {
     padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center
-    
 }
+
 .flexbox li {
     list-style: none;
     height: 160px;
@@ -67,33 +69,34 @@ h2{
 /* GRID */
 
 .grid-container {
-display: grid;
+    display: grid;
 }
 
-.grid img{
+.grid img {
     width: 90%;
     margin-top: 20px;
     margin-right: 10px;
-    
+
 }
 
-.grid-container{
+.grid-container {
     grid-template-columns: 30% 70%;
 }
 
-form{
+form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: 
-    "i1 i2"
-    "ta ta"
-    "vi bt";
+    grid-template-areas:
+        "i1 i2"
+        "ta ta"
+        "vi bt";
 }
 
-input, textarea {
+input,
+textarea {
     margin: 5px;
-    
+
     padding: 10px;
     font-size: 1.1rem;
     font-family: Poppins;
@@ -103,9 +106,9 @@ input, textarea {
 }
 
 textarea {
-grid-area: ta;
-height: 40px;
-resize: none;
+    grid-area: ta;
+    height: 40px;
+    resize: none;
 }
 
 #btn-submit {
@@ -120,27 +123,28 @@ resize: none;
     transition: 0.5s;
 }
 
-#btn-submit:hover{
+#btn-submit:hover {
     box-shadow: none;
 }
 
 /* ABSOLUTE */
 /* il faut mettre une position relative au parent pour contraindre l'élément en absolute dans ses frontières  */
 
-.absolute{
+.absolute {
     position: relative;
 }
-#circle1{
+
+#circle1 {
     height: 60px;
     width: 60px;
     background: skyblue;
-    position:absolute;
+    position: absolute;
     border-radius: 150px;
     top: 0;
     right: 0;
 }
 
-#circle2{
+#circle2 {
     height: 40px;
     width: 40px;
     border-radius: 150px;
@@ -148,4 +152,32 @@ resize: none;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:900px) {
+    .grid-container {
+        display: block;
+        margin: auto;
+        width: 40%;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:800px) {
+    form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "i1"
+            "i2"
+            "ta"
+            "bt";
+    }
+}
+
+@media screen and (max-width:600px) {
+    .flexbox ul {
+        flex-direction: column;
+    }
 }
